@@ -24,8 +24,8 @@ export class ApiService {
   getFollowing(userLogin: string){
     return this.http.get<User[]>(`${env.apiURL}/users/${userLogin}/following`);
   }
-  getRepos(userLogin: string){
-    return this.http.get<Repo[]>(`${env.apiURL}/users/${userLogin}/repos`); 
+  getRepos(userLogin: string, index = 1){
+    return this.http.get<Repo[]>(`${env.apiURL}/users/${userLogin}/repos?page=${index}&per_page=10`); 
   }
   getRepo(userLogin: string, repoName: string){
     return this.http.get<Repo>(`${env.apiURL}/repos/${userLogin}/${repoName}`); 
