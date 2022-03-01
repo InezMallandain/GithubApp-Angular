@@ -11,6 +11,7 @@ import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
 import { ReposComponent } from './repos/repos.component';
 import { GistsComponent } from './gists/gists.component';
+import { RepoDetailsComponent } from './repos/repo-details/repo-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GistsComponent } from './gists/gists.component';
     FollowersComponent,
     FollowingComponent,
     ReposComponent,
-    GistsComponent
+    GistsComponent,
+    RepoDetailsComponent
   ],
   imports: [
     BrowserModule,

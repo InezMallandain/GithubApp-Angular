@@ -27,7 +27,13 @@ export class ApiService {
   getRepos(userLogin: string){
     return this.http.get<Repo[]>(`${env.apiURL}/users/${userLogin}/repos`); 
   }
+  getRepo(userLogin: string, repoName: string){
+    return this.http.get<Repo>(`${env.apiURL}/repos/${userLogin}/${repoName}`); 
+  }
   getGists(userLogin: string){
     return this.http.get<Gist[]>(`${env.apiURL}/users/${userLogin}/gists`); 
+  }
+  getStack(repo: Repo){
+    return this.http.get<any>(`${env.apiURL}/repos/${repo.owner.login}/${repo.name}/languages`); 
   }
 }
