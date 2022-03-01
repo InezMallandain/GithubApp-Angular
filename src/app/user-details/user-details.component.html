@@ -10,7 +10,7 @@
         <hr>
         <p>{{user.bio}}</p>
         <a [routerLink]="['followers']">Followers: {{user.followers}}</a>
-        <p>Following: {{user.following}}</p>
+        <a [routerLink]="['following']">Following: {{user.following}}</a>
         <p>Repos:{{user.public_repos}}</p>
         <p>Gists:{{user.public_gists}}</p>
       </div>

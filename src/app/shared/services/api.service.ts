@@ -19,4 +19,7 @@ export class ApiService {
   getFollowers(userLogin: string){
     return this.http.get<User[]>(`${env.apiURL}/users/${userLogin}/followers`);
   }
+  getFollowing(userLogin: string){
+    return this.http.get<User[]>(`${env.apiURL}/users/${userLogin}/following`);
+  }
 }
