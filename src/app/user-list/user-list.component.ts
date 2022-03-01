@@ -22,11 +22,4 @@ export class UserListComponent implements OnInit {
       }
     });
   }
-  onSearch(searchText: string){
-    this.apiService.getUsers(searchText).subscribe((res) => {
-      if(res.items){
-        this.users = res.items;
-      }
-    });
-  }
 }
