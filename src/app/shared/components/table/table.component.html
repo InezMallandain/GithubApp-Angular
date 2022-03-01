@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users; let i = index">
-      <td scope="row">{{ i+1 }}</td>
+      <td scope="row">{{ i + 1 }}</td>
       <td>{{ user.login }}</td>
       <td>{{ user.type }}</td>
       <td>
@@ -38,6 +38,27 @@
     </tr>
   </tbody>
 </table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="pageIndex < 2" >
+      <span class="page-link" (click)="onPageChange(pageIndex - 1)" 
+        >Previous</span
+      >
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="onPageChange(pageIndex)">{{ pageIndex }}</span>
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="onPageChange(pageIndex + 1)">{{ pageIndex + 1 }}</span>
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="onPageChange(pageIndex + 2)">{{ pageIndex + 2 }}</span>
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="onPageChange(pageIndex + 1)">Next</span>
+    </li>
+  </ul>
+</nav>
 <ng-template #loading>
   <div class="d-flex justify-content-center align-content-center">
     <div class="spinner-border" role="status">

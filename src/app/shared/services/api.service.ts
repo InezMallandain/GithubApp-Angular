@@ -11,8 +11,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(queryString:string){
-   return this.http.get<SearchUserResponse>(`${env.apiURL}/search/users?q=${queryString}&page=1&per_page=1`)
+  getUsers(queryString:string, index: number = 1){
+   return this.http.get<SearchUserResponse>(`${env.apiURL}/search/users?q=${queryString}&page=${index}&per_page=10`)
   }
 
   getUser(userLogin: string){

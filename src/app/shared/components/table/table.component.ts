@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input,Output, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 
 @Component({
@@ -8,9 +8,15 @@ import { User } from '../../models/user.model';
 })
 export class TableComponent implements OnInit {
   @Input() users: User[] | undefined;
+  @Input() pageIndex: number = 1;
+  @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPageChange(index:number){
+    this.pageChange.emit(index);
   }
 
 }

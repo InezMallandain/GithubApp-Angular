@@ -1,4 +1,4 @@
 <div>
   <app-search-bar (search)="getUser($event)"></app-search-bar>
-  <app-table [users]="users"></app-table>
+  <app-table [users]="users" (pageChange)="changePage($event)" [pageIndex]="index"></app-table>
 </div>

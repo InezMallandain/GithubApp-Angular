@@ -9,17 +9,25 @@ import { ApiService } from '../shared/services/api.service';
 })
 export class UserListComponent implements OnInit {
   users: User[] | undefined;
+  user: string = "";
+  index: number = 1;
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getUser('angular');
   }
 
-  getUser(queryString:string){
-    this.apiService.getUsers(queryString).subscribe((res) => {
+  getUser(user:string, index:number = 1){ 
+    this.user = user;
+    this.apiService.getUsers(user, index).subscribe((res) => {
       if(res.items){
         this.users = res.items;
       }
     });
+  }
+
+  changePage(index: any){
+    this.index = index;
+    this.getUser(this.user, index);
   }
 }
