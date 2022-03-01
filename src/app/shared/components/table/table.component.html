@@ -1,0 +1,27 @@
+<table class="table" *ngIf="data; else loading">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">User Type</th>
+      <th scope="col">Profile Image</th>
+      <th scope="col">
+        <!--  Actions -->
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="data; let i = index">
+      <th scope="row">{{i}}</th>
+      <td>{{data.login}}</td>
+      <td>{{data.type}}</td>
+      <td><img [src]="data.avatar_url" [alt]="data.login"></td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #loading>
+  <div class="d-flex justify-content-center align-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+</ng-template>
