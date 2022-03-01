@@ -1,1 +1,4 @@
-<app-table></app-table>
+<div>
+  <app-search-bar (search)="getUser($event)"></app-search-bar>
+  <app-table [users]="users"></app-table>
+</div>

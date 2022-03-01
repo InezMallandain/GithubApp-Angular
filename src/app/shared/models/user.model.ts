@@ -1,6 +1,6 @@
 export interface SearchUserResponse{
-    total_count: string;
-    incomplete_results: false;
+    total_count?: number;
+    incomplete_results?: boolean;
     items: User[]
 }
 

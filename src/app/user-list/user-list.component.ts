@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchUserResponse, User } from '../shared/models/user.model';
+import { ApiService } from '../shared/services/api.service';
 
 @Component({
   selector: 'app-user-list',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-
-  constructor() { }
+  users: User[] | undefined;
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    // this.getUser();
   }
 
+  getUser(queryString:string){
+    this.apiService.getUsers(queryString).subscribe((res) => {
+      if(res.items){
+        this.users = res.items;
+      }
+    });
+  }
+  onSearch(searchText: string){
+    this.apiService.getUsers(searchText).subscribe((res) => {
+      if(res.items){
+        this.users = res.items;
+      }
+    });
+  }
 }

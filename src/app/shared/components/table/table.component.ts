@@ -7,7 +7,7 @@ import { User } from '../../models/user.model';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  @Input() data: User | undefined;
+  @Input() users: User[] | undefined;
   constructor() { }
 
   ngOnInit(): void {

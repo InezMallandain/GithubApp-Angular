@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { UserListComponent } from './user-list/user-list.component';
+import { BasicAuthInterceptor } from './shared/_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,12 @@ import { UserListComponent } from './user-list/user-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    HttpClientModule,
+    SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
