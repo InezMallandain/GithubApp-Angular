@@ -1,10 +1,10 @@
-export interface SearchUserResponse{
-    total_count?: number;
-    incomplete_results?: boolean;
-    items: User[]
+export interface SearchUserResponse {
+  total_count?: number;
+  incomplete_results?: boolean;
+  items: User[];
 }
 
-export interface User{
+export interface User {
   login: string;
   id: number;
   node_id: string;
@@ -23,5 +23,19 @@ export interface User{
   received_events_url: string;
   type: string;
   site_admin: boolean;
-  score: number;
+  score?: number;
+  name?: string;
+  company?: string;
+  blog?: string;
+  location?: string;
+  email?: string;
+  hireable?: string;
+  bio?: string;
+  twitter_username?: string;
+  public_repos?: number;
+  public_gists?: number;
+  followers?: number;
+  following?: number;
+  created_at?: Date;
+  updated_at?: Date;
 }
