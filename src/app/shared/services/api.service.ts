@@ -14,7 +14,9 @@ export class ApiService {
   }
 
   getUser(userLogin: string){
-    userLogin;
     return this.http.get<User>(`${env.apiURL}/users/${userLogin}`);
+  }
+  getFollowers(userLogin: string){
+    return this.http.get<User[]>(`${env.apiURL}/users/${userLogin}/followers`);
   }
 }

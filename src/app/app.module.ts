@@ -7,12 +7,14 @@ import { SharedModule } from './shared/shared.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { BasicAuthInterceptor } from './shared/_helpers/auth.interceptor';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { FollowersComponent } from './followers/followers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
