@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    // this.getUser();
+    this.getUser('angular');
   }
 
   getUser(queryString:string){

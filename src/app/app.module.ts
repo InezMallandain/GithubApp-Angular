@@ -9,6 +9,8 @@ import { BasicAuthInterceptor } from './shared/_helpers/auth.interceptor';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
+import { ReposComponent } from './repos/repos.component';
+import { GistsComponent } from './gists/gists.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FollowingComponent } from './following/following.component';
     UserListComponent,
     UserDetailsComponent,
     FollowersComponent,
-    FollowingComponent
+    FollowingComponent,
+    ReposComponent,
+    GistsComponent
   ],
   imports: [
     BrowserModule,

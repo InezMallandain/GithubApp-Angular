@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment as env } from "src/environments/environment";
+import { Gist } from '../models/gists.model';
+import { Repo } from '../models/repo.model';
 import { SearchUserResponse, User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,11 @@ export class ApiService {
   }
   getFollowing(userLogin: string){
     return this.http.get<User[]>(`${env.apiURL}/users/${userLogin}/following`);
+  }
+  getRepos(userLogin: string){
+    return this.http.get<Repo[]>(`${env.apiURL}/users/${userLogin}/repos`); 
+  }
+  getGists(userLogin: string){
+    return this.http.get<Gist[]>(`${env.apiURL}/users/${userLogin}/gists`); 
   }
 }

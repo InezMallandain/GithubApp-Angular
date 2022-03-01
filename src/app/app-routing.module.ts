@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
+import { GistsComponent } from './gists/gists.component';
+import { ReposComponent } from './repos/repos.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'user/:id/following',
     component: FollowingComponent
+  },
+  {
+    path: 'user/:id/repos',
+    component: ReposComponent
+  },
+  {
+    path: 'user/:id/gists',
+    component: GistsComponent
   }
 ];
 
