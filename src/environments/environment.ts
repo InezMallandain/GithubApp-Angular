@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   apiURL: 'https://api.github.com',
-  apiUsername: 'codenameninja',
-  apiPassword: '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'
+  apiUsername: 'InezMallandain',
+  apiPassword: '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'
 };
 
 /*
